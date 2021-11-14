@@ -2,7 +2,7 @@ package Persistence;
 
 import Dependencies.IMysqlConnection;
 import Dependencies.MysqlConnection;
-import Models.User;
+import Models.Users.BaseUser;
 import Persistence.DAO.LoginDao;
 
 public class LoginDaoImpl implements LoginDao {
@@ -14,7 +14,7 @@ public class LoginDaoImpl implements LoginDao {
     }
 
     @Override
-    public boolean verifyCredentials(User user) {
+    public boolean verifyCredentials(BaseUser baseUser) {
         return false;
     }
 

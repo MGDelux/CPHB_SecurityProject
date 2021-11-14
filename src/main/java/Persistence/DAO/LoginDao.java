@@ -1,7 +1,7 @@
 package Persistence.DAO;
 
-import Models.User;
+import Models.Users.BaseUser;
 
 public interface LoginDao {
-    public boolean verifyCredentials(User user);
+    public boolean verifyCredentials(BaseUser baseUser);
 }
