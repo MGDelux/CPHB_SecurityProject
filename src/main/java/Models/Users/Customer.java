@@ -8,4 +8,9 @@ public class Customer {
     Address address;
     double storeCredit;
 
+    public Customer(boolean isCustomer, Address address, double storeCredit) {
+        this.isCustomer = isCustomer;
+        this.address = address;
+        this.storeCredit = storeCredit;
+    }
 }

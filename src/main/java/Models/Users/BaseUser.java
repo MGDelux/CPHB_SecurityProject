@@ -1,5 +1,5 @@
 package Models.Users;
-
+package Models.Store;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.*;
@@ -7,6 +7,7 @@ import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 import java.util.List;
 
+import Models.Store.InternalPermissions;
 import org.mindrot.jbcrypt.BCrypt;
 
 @Entity(name="Users")
@@ -32,7 +33,8 @@ public class BaseUser implements Serializable {
     private byte[] profilePicture; //we store images as bytes for db
     @Column(name="userPermissions")
     @OneToMany(targetEntity = Permissions.class,cascade = CascadeType.PERSIST,fetch =  FetchType.EAGER)
-    private List<Permissions.WebsitePermission> userPermissions;
+    private List<Permissions.UserPermissions> userPermissions;
+    private List<InternalPermissions.DatabasePermissions>
     @Column(name="CustomerInfomation")
     private Customer customerInfomation;
 
@@ -45,7 +47,11 @@ public class BaseUser implements Serializable {
 
     }
 
-    public void addPermissionToUser(Permissions.WebsitePermission perm) throws Exception {
+    public void setUserPermissions(List<Permissions.UserPermissions> userPermissions) {
+        this.userPermissions = userPermissions;
+    }
+
+    public void addPermissionToUser(Permissions.UserPermissions perm) throws Exception {
         try {
             userPermissions.add(perm);
         }catch (Exception e){
