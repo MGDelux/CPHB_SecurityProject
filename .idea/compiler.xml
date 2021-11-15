@@ -6,11 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ValgfagBoilerPlateSecurity" />
+        <module name="CPH SECURITY EXAM SOLID CODE" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ValgfagBoilerPlateSecurity" target="1.8" />
+      <module name="CPH SECURITY EXAM SOLID CODE" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CPH SECURITY EXAM SOLID CODE" options="-endorseddirs C:\Users\mathi\IdeaProjects\CPHB_SecurityProject\target/endorsed" />
+    </option>
   </component>
 </project>

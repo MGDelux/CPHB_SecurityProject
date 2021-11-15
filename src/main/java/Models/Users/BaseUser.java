@@ -1,14 +1,14 @@
 package Models.Users;
-package Models.Store;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import javax.persistence.*;
-import javax.validation.constraints.Pattern;
-import java.io.Serializable;
-import java.util.List;
 
-import Models.Store.InternalPermissions;
 import org.mindrot.jbcrypt.BCrypt;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 
 @Entity(name="Users")
 public class BaseUser implements Serializable {
@@ -31,12 +31,11 @@ public class BaseUser implements Serializable {
     private String saltedPassword;
      @Column(name="ProfilePicture")
     private byte[] profilePicture; //we store images as bytes for db
-    @Column(name="userPermissions")
     @OneToMany(targetEntity = Permissions.class,cascade = CascadeType.PERSIST,fetch =  FetchType.EAGER)
-    private List<Permissions.UserPermissions> userPermissions;
-    private List<InternalPermissions.DatabasePermissions>
-    @Column(name="CustomerInfomation")
-    private Customer customerInfomation;
+    private List<Permissions> userPermissions;
+
+
+
 
     public BaseUser(@NotNull @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\." + "[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@" + "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "{invalid.email}") String email, @NotNull String saltedPassword) {
         this.email = email;
@@ -47,11 +46,11 @@ public class BaseUser implements Serializable {
 
     }
 
-    public void setUserPermissions(List<Permissions.UserPermissions> userPermissions) {
+    public void setUserPermissions(List<Permissions> userPermissions) {
         this.userPermissions = userPermissions;
     }
 
-    public void addPermissionToUser(Permissions.UserPermissions perm) throws Exception {
+    public void addPermissionToUser(Permissions perm) throws Exception {
         try {
             userPermissions.add(perm);
         }catch (Exception e){
@@ -60,6 +59,9 @@ public class BaseUser implements Serializable {
 
     }
 
+    public long getId() {
+        return id;
+    }
 
     public String getEmail() {
         return email;
@@ -78,9 +80,8 @@ public class BaseUser implements Serializable {
     }
 
 
-
-    public void setCustomerInfomation(Customer customerInfomation) {
-        this.customerInfomation = customerInfomation;
+    public List<Permissions> getUserPermissions() {
+        return userPermissions;
     }
 
     public String getUsername() {
@@ -91,11 +92,18 @@ public class BaseUser implements Serializable {
         return profilePicture;
     }
 
-
-
-    public Customer getCustomerInfomation() {
-        return customerInfomation;
+    @Override
+    public String toString() {
+        return "BaseUser{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", saltedPassword='" + saltedPassword + '\'' +
+                ", profilePicture=" + Arrays.toString(profilePicture) +
+                ", userPermissions=" + userPermissions +
+                '}';
     }
 
-    //TODO DTO TOSTRING()
+
+//TODO DTO TOSTRING()
 }

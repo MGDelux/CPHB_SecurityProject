@@ -2,7 +2,7 @@ package Models.Store;
 
 public class InternalPermissions {
    protected enum DatabasePermissions{
-        //work in progress and theory
+        // work in progress and theory
         DB_MODIFY_OTHER_USER,
         DB_DELETE_OTHER_USER,
         DB_MODIFY_SELF_USER,
