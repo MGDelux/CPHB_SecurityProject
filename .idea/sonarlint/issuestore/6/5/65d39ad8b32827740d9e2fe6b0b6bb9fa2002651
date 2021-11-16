@@ -1,7 +1,7 @@
 
+Œ
+java:S4165"jRemove this useless assignment; "permissionID" already holds the assigned value along all execution paths.(äÿÎ¶şÿÿÿÿ8Ü±–Ò/
+7
+java:S1700&"Rename field "permissions"(û‚Ã’8›İŠÒ/
 >
-java:S1116-"Remove this empty statement.(ôŸìúÿÿÿÿ8Ö»×›Ò/
-O
-java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Ö»×›Ò/
-X
-java:S3066%"<Lower the visibility of this setter or remove it altogether.(ÔÖÇ]8¯µá›Ò/
+java:S11164"Remove this empty statement.(ôŸìúÿÿÿÿ8ïŠÒ/

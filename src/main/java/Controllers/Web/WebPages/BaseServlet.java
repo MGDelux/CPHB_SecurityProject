@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.Web.WebPages;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,5 +26,8 @@ public class BaseServlet extends HttpServlet {
 
     }
 
-
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println(req.getRemoteUser());
+    }
 }

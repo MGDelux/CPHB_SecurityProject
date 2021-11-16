@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity(name="Users")
@@ -33,6 +32,8 @@ public class BaseUser implements Serializable {
     private byte[] profilePicture; //we store images as bytes for db
     @OneToMany(targetEntity = Permissions.class,cascade = CascadeType.PERSIST,fetch =  FetchType.EAGER)
     private List<Permissions> userPermissions;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Customer customerInfomation;
 
 
 
@@ -92,18 +93,13 @@ public class BaseUser implements Serializable {
         return profilePicture;
     }
 
-    @Override
-    public String toString() {
-        return "BaseUser{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                ", saltedPassword='" + saltedPassword + '\'' +
-                ", profilePicture=" + Arrays.toString(profilePicture) +
-                ", userPermissions=" + userPermissions +
-                '}';
+    public Customer getCustomerInfomation() {
+        return customerInfomation;
     }
 
+    public void setCustomerInfomation(Customer customerInfomation) {
+        this.customerInfomation = customerInfomation;
+    }
 
 //TODO DTO TOSTRING()
 }

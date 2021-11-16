@@ -1,4 +1,4 @@
-package Config;
+package Dependencies;
 
 import java.util.Properties;
 import javax.persistence.EntityManagerFactory;

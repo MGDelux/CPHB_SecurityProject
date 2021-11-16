@@ -1,15 +1,15 @@
 
-L
-java:S1068"/Remove this unused "productName" private field.(…œ£ß8ÔÍÀôÑ/
-P
-java:S1068"3Remove this unused "productsInStock" private field.(½¯¢Í8±€ÆôÑ/
-u	java:S116"YRename this field "ProductPicture" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©—ªş8ÚÚÑôÑ/
-X
-java:S1068	"6Remove this unused "productDescription" private field.(ĞŒÌ‘üÿÿÿÿ8ÔÍÀôÑ/
 J
 java:S1068"-Remove this unused "productID" private field.(øóºØ8ÔÍÀôÑ/
-O
-java:S1068"2Remove this unused "ProductPicture" private field.(©—ªş8ÚÚÑôÑ/
 M
 java:S1068
 "0Remove this unused "productPrice" private field.(ÙËÓ½8¾¾ÂôÑ/
+X
+java:S1068	"6Remove this unused "productDescription" private field.(ĞŒÌ‘üÿÿÿÿ8ÔÍÀôÑ/
+O
+java:S1068"2Remove this unused "ProductPicture" private field.(©—ªş8ÚÚÑôÑ/
+P
+java:S1068"3Remove this unused "productsInStock" private field.(½¯¢Í8±€ÆôÑ/
+u	java:S116"YRename this field "ProductPicture" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©—ªş8ÚÚÑôÑ/
+L
+java:S1068"/Remove this unused "productName" private field.(…œ£ß8ÔÍÀôÑ/

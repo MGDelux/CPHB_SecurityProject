@@ -1,10 +1,20 @@
 package Models.Users;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * CREATED BY mathias @ 14-11-2021 - 14:06
  **/
-public class Customer {
+@Entity(name="CustomerInfomation")
+
+public class Customer implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     boolean isCustomer;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
     Address address;
     double storeCredit;
 
@@ -12,5 +22,9 @@ public class Customer {
         this.isCustomer = isCustomer;
         this.address = address;
         this.storeCredit = storeCredit;
+    }
+
+    public Customer() {
+
     }
 }

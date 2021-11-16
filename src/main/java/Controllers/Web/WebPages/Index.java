@@ -1,7 +1,5 @@
-package Controllers.WebPages;
+package Controllers.Web.WebPages;
 
-
-import Controllers.BaseServlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

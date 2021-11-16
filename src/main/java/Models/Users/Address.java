@@ -1,9 +1,19 @@
 package Models.Users;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /**
  * CREATED BY mathias @ 14-11-2021 - 14:29
  **/
+@Entity(name = "Shipping")
 public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     String shippingAdress;
     String houseNumber;
     int shippingZipCode;
@@ -16,6 +26,10 @@ public class Address {
         this.shippingZipCode = shippingZipCode;
         this.shippingCity = shippingCity;
         this.country = country;
+    }
+
+    public Address() {
+
     }
 
     public String getShippingAdress() {

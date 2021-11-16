@@ -1,6 +1,6 @@
 package Models.Users;
 
-import Config.EMF_Creator;
+import Dependencies.EMF_Creator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
